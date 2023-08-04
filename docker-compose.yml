@@ -1,8 +1,9 @@
 version: '3.9'
 
 services:
-  postgresql:
-    container_name: postgresql
+  db:
+    image: postgres:latest2
+    container_name: postgresql_sample
     build: ./postgresql
     ports:
       - 5432:5432
@@ -11,4 +12,5 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
+      POSTGRES_DB: $POSTGRES_DB
     restart: always
