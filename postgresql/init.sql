@@ -7,9 +7,10 @@ GRANT ALL PRIVILEGES ON DATABASE docker TO docker;
 --ユーザーを切り替え
 \c docker
 --テーブルを作成
-CREATE TABLE book (
+CREATE TABLE user (
   id integer, 
+  name varchar(30)
   name varchar(30)
 );
 --テーブルにデータを挿入
-INSERT INTO book VALUES (1,'banana');
+INSERT INTO user VALUES (1,'user', 'pass');
