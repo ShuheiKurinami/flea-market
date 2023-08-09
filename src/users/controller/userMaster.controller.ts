@@ -1,11 +1,17 @@
-import {
-    Controller,
-    Get,
-  } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { userInfoSample } from './userrepository/userInfo';
+import { UserMasterTokens } from '../userMaster.constants';
+import { IUserMasterUseCase } from '../application/userMaster.usecase.interface';
 
-  @Controller('users')
+@Controller('users')
+export class UserMasterController {
+  constructor(
+    @Inject(UserMasterTokens.USECASE)
+    private readonly userMasterUseCase: IUserMasterUseCase,
+  ) {}
 
-  @Get('account')
+  @Get()
   async get(): Promise<userInfoSample> {
     return await this.userMasterUseCase.get();
   }
+}

@@ -1,4 +1,4 @@
-import { User as PrismaUserMaster } from '@prisma/client';
+import { UserMaster as PrismaUserMaster } from '@prisma/client';
 import { userInfoSample } from '../controller/userrepository/userInfo';
 
 export interface IUserMasterUseCase {
