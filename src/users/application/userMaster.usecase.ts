@@ -12,6 +12,6 @@ export class UserMasterUseCase implements IUserMasterUseCase {
   ) {}
   get = async (): Promise<userInfoSample> => {
     const id = 1; // TODO
-    return await this.userMasterRepository.findByBaseId(id);
+    return await this.userMasterRepository.findById(id);
   };
 }

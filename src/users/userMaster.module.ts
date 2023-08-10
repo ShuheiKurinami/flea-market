@@ -7,7 +7,7 @@ import { PrismaModule } from 'src/common/prisma.module';
 
 @Module({
   controllers: [UserMasterController],
-  imports: [PrismaModule],
+  //imports: [PrismaModule],
   providers: [
     {
       provide: UserMasterTokens.USECASE,

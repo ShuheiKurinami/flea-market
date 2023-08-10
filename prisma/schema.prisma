@@ -14,6 +14,17 @@ model UserMaster {
   id    Int     @default(autoincrement()) @id
   name  String? @map("name")
   password String @map("password")
+  items  ItemMaster[]
 
-  @@map("user")
+  
+}
+
+model ItemMaster {
+  id Int @default(autoincrement()) @id
+  name String
+  itemId Int
+  userId     Int        // リレーションの外部キー
+  userMaster UserMaster @relation(fields: [userId], references: [id]) // リレーションの定義
+
+  
 }

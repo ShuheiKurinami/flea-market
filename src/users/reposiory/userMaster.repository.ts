@@ -7,7 +7,7 @@ import { PrismaService } from 'src/common/prisma.service';
 export class UserMasterRepository implements IUserMasterRepository {
   constructor(private prisma: PrismaService) {}
 
-  findByBaseId = async (id: number): Promise<userInfoSample> => {
+  findById = async (id: number): Promise<userInfoSample> => {
     const results = await this.prisma.userMaster.findUnique({
       where: {
         id: id,
